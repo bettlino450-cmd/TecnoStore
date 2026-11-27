@@ -1,0 +1,55 @@
+<section class="catalogo">
+
+  <div class="titulo-seccion">
+    <div>
+      <span class="etiqueta">REGISTROS</span>
+      <h2>Historial de pedidos</h2>
+      <p>Consulta los pedidos que se realizaron en la tienda.</p>
+    </div>
+  </div>
+
+  @if (pedidos.length > 0) {
+
+    <div class="table-responsive">
+  <table class="table table-striped table-hover table-bordered align-middle">
+        <thead>
+          <tr>
+            <th>N.º</th>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Total</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @for (pedido of pedidos; track pedido.id; let i = $index) {
+            <tr>
+              <td>{{ i + 1 }}</td>
+              <td>{{ pedido.nombreProducto }}</td>
+              <td>{{ pedido.cantidad }}</td>
+              <td>{{ pedido.precio | currency:'BOB':'code':'1.0-2' }}</td>
+              <td>{{ pedido.total | currency:'BOB':'code':'1.0-2' }}</td>
+              <td>{{ pedido.fecha | date:'dd/MM/yyyy HH:mm' }}</td>
+              <td>{{ pedido.estado }}</td>
+              <td>
+                    <a
+  [routerLink]="['/pedidos', pedido.id]"
+  class="btn btn-primary btn-sm">
+  Ver detalle
+</a>
+                </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+  } @else {
+    <p>No hay pedidos registrados.</p>
+  }
+
+</section>

@@ -1,0 +1,77 @@
+.catalogo {
+  padding: 50px 7%;
+  background: #f8fafc;
+}
+
+.titulo-seccion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.etiqueta {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.titulo-seccion h2 {
+  color: #1e293b;
+  margin: 10px 0;
+}
+
+.titulo-seccion p {
+  color: #64748b;
+}
+
+.contador {
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.herramientas {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.herramientas input,
+.herramientas select {
+  padding: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+  width: 100%;
+  outline: none;
+}
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.sin-resultados {
+  color: #64748b;
+  padding: 25px;
+}
+
+@media (max-width: 600px) {
+  .titulo-seccion {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .herramientas {
+    flex-direction: column;
+  }
+
+  .catalogo {
+    padding: 30px 5%;
+  }
+}

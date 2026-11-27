@@ -1,0 +1,51 @@
+
+<section class="catalogo">
+
+  <div class="titulo-seccion">
+    <div>
+      <span class="etiqueta">NUEVA OPERACIÓN</span>
+      <h2>Registrar pedido</h2>
+      <p>Producto seleccionado: {{ productoId }}</p>
+      <p>Selecciona un producto e indica la cantidad.</p>
+    </div>
+  </div>
+
+  <div class="formulario-pedido">
+
+    <label>Producto</label>
+
+    <select class="form-select mb-3" [(ngModel)]="productoId">
+      <option [ngValue]="null">Seleccionar producto</option>
+
+      @for (producto of productos; track producto.id) {
+        <option [ngValue]="producto.id">
+          {{ producto.nombre }} - Bs {{ producto.precio }}
+        </option>
+      }
+    </select>
+
+    <label>Cantidad</label>
+
+    <input
+      type="number"
+      min="1"
+      class="form-control mb-3"
+      [(ngModel)]="cantidad"
+      placeholder="Cantidad de unidades"
+    >
+
+    <button
+      class="boton-principal"
+      type="button"
+      (click)="registrarPedido()"
+    >
+      Registrar pedido
+    </button>
+
+    @if (mensaje) {
+      <p>{{ mensaje }}</p>
+    }
+
+  </div>
+
+</section>

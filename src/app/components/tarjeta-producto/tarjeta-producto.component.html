@@ -1,0 +1,27 @@
+<div class="tarjeta">
+  <div class="producto-imagen">
+    {{ icono }}
+  </div>
+
+  <div class="producto-info">
+    <span class="categoria">{{ categoria }}</span>
+
+    <h3>{{ nombre }}</h3>
+
+    <p>{{ descripcion }}</p>
+
+    <p class="precio">Bs {{ precio }}</p>
+
+    <p class="stock">
+      Stock disponible: {{ stock }}
+    </p>
+
+    <button
+      type="button"
+      (click)="seleccionar.emit(id)"
+      [disabled]="stock <= 0"
+    >
+      Seleccionar producto
+    </button>
+  </div>
+</div>

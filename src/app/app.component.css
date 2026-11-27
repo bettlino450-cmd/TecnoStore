@@ -1,0 +1,397 @@
+
+/* CONFIGURACIÓN GENERAL */
+* {
+  box-sizing: border-box;
+}
+
+.pagina {
+  min-height: 100vh;
+  background: #f5f7fb;
+  color: #172033;
+  font-family: Arial, sans-serif;
+}
+
+/* ENCABEZADO */
+.encabezado {
+  background: #111827;
+  color: white;
+  padding: 28px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo h1 {
+  font-size: 34px;
+  margin: 0;
+}
+
+.logo-icono {
+  font-size: 42px;
+}
+
+.encabezado nav {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.encabezado nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.encabezado nav a:hover {
+  color: #38bdf8;
+}
+
+.texto-header {
+  color: #cbd5e1;
+  font-size: 14px;
+}
+/* PRESENTACIÓN */
+.presentacion {
+  background: linear-gradient(120deg, #172554, #2563eb);
+  color: white;
+  padding: 65px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.etiqueta {
+  color: #0ea5e9;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.presentacion .etiqueta {
+  color: #bae6fd;
+}
+
+.presentacion h2 {
+  font-size: 38px;
+  max-width: 600px;
+  margin: 15px 0;
+}
+
+.presentacion p {
+  color: #dbeafe;
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+
+.boton-principal {
+  display: inline-block;
+  background: #38bdf8;
+  color: #082f49;
+  padding: 13px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.boton-principal:hover {
+  background: white;
+}
+
+.imagen-presentacion {
+  font-size: 120px;
+}
+
+/* CATÁLOGO */
+.catalogo {
+  padding: 55px 8%;
+}
+
+.titulo-seccion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.titulo-seccion h2 {
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.titulo-seccion p {
+  color: #64748b;
+}
+
+.contador {
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* BUSCADOR Y FILTRO */
+.herramientas {
+  display: flex;
+  gap: 15px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.herramientas input,
+.herramientas select {
+  background: white;
+  border: 1px solid #cbd5e1;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+.herramientas input {
+  flex: 1;
+  min-width: 220px;
+}
+
+.herramientas select {
+  min-width: 210px;
+}
+
+.herramientas input:focus,
+.herramientas select:focus {
+  border-color: #2563eb;
+}
+
+/* TARJETAS DE PRODUCTOS */
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+.tarjeta {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+}
+
+.producto-imagen {
+  background: #eaf2ff;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.producto-imagen span {
+  font-size: 70px;
+}
+
+.producto-info {
+  padding: 20px;
+}
+
+.categoria {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.producto-info h3 {
+  font-size: 18px;
+  margin: 12px 0;
+}
+
+.producto-info p {
+  color: #64748b;
+  font-size: 14px;
+  min-height: 35px;
+}
+
+.precio {
+  color: #1d4ed8;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 15px 0 8px;
+}
+
+.stock {
+  color: #16a34a;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.sin-resultados {
+  color: #64748b;
+  padding: 20px;
+}
+
+/* FORMULARIO DE PEDIDOS */
+.formulario-pedido {
+  background: white;
+  max-width: 650px;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.formulario-pedido label {
+  font-weight: bold;
+  color: #334155;
+  margin-top: 8px;
+}
+
+.formulario-pedido input,
+.formulario-pedido select {
+  padding: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  background: white;
+}
+
+.formulario-pedido input:focus,
+.formulario-pedido select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.formulario-pedido button {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+/* MENSAJES */
+.exito {
+  color: #15803d;
+  background: #dcfce7;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.error {
+  color: #b91c1c;
+  background: #fee2e2;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* TABLA DE PEDIDOS */
+.tabla-contenedor {
+  overflow-x: auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 750px;
+}
+
+th {
+  background: #172554;
+  color: white;
+  padding: 16px;
+  text-align: left;
+}
+
+td {
+  padding: 15px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+tbody tr:hover {
+  background: #f1f5f9;
+}
+
+/* BOTÓN CANCELAR */
+.boton-cancelar {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: none;
+  padding: 9px 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.boton-cancelar:hover {
+  background: #fecaca;
+}
+
+/* PIE DE PÁGINA */
+footer {
+  background: #111827;
+  color: #cbd5e1;
+  text-align: center;
+  padding: 22px;
+  margin-top: 30px;
+}
+
+/* DISEÑO PARA CELULARES */
+@media (max-width: 600px) {
+  .encabezado {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .presentacion {
+    flex-direction: column;
+    text-align: center;
+    padding: 45px 6%;
+  }
+
+  .presentacion h2 {
+    font-size: 29px;
+  }
+
+  .imagen-presentacion {
+    font-size: 85px;
+  }
+
+  .catalogo {
+    padding: 35px 6%;
+  }
+
+  .herramientas {
+    flex-direction: column;
+  }
+
+  .herramientas input,
+  .herramientas select {
+    width: 100%;
+  }
+}
+nav a.activo {
+  background-color: #2563eb;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  padding: 8px 12px;
+}

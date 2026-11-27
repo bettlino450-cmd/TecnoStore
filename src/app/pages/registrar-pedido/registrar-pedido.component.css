@@ -1,0 +1,64 @@
+.catalogo {
+  padding: 50px 7%;
+  background: #f8fafc;
+  min-height: 70vh;
+}
+
+.titulo-seccion {
+  margin-bottom: 30px;
+}
+
+.etiqueta {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.titulo-seccion h2 {
+  color: #1e293b;
+  margin: 10px 0;
+}
+
+.titulo-seccion p {
+  color: #64748b;
+}
+
+.formulario-pedido {
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  max-width: 550px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.formulario-pedido label {
+  display: block;
+  margin: 18px 0 8px;
+  color: #334155;
+  font-weight: bold;
+}
+
+.formulario-pedido select,
+.formulario-pedido input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.boton-principal {
+  margin-top: 25px;
+  width: 100%;
+  padding: 14px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.boton-principal:hover {
+  background: #1d4ed8;
+}

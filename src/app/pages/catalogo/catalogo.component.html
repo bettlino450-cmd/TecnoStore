@@ -1,0 +1,58 @@
+<section class="catalogo">
+
+  <div class="titulo-seccion">
+    <div>
+      <span class="etiqueta">NUESTRO CATÁLOGO</span>
+      <h2>Productos disponibles</h2>
+      <p>Encuentra tu próximo equipo tecnológico.</p>
+    </div>
+
+    <span class="contador">
+      {{ productosFiltrados.length }} productos
+    </span>
+  </div>
+
+  <div class="herramientas">
+
+    <input
+      type="text"
+      placeholder="Buscar producto..."
+      [(ngModel)]="busqueda"
+    >
+
+    <select [(ngModel)]="categoriaSeleccionada">
+      <option value="Todos">Todas las categorías</option>
+      <option value="Celulares">Celulares</option>
+      <option value="Computadoras">Computadoras</option>
+      <option value="Accesorios">Accesorios</option>
+    </select>
+
+  </div>
+
+  <div class="productos">
+
+    @for (producto of productosFiltrados; track producto.id) {
+
+      <app-tarjeta-producto
+         [ngClass]="{'sin-stock': producto.stock === 0}"
+      (seleccionar)="seleccionarProducto($event)"
+        [id]="producto.id"
+        [nombre]="producto.nombre"
+        [categoria]="producto.categoria"
+        [precio]="producto.precio"
+        [stock]="producto.stock"
+        [icono]="producto.icono"
+        [descripcion]="producto.descripcion"
+      ></app-tarjeta-producto>
+
+    } @empty {
+
+      <p class="sin-resultados">
+        No se encontraron productos.
+      </p>
+
+    }
+
+  </div>
+
+</section>

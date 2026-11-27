@@ -1,0 +1,52 @@
+.catalogo {
+  padding: 50px 7%;
+  background: #f8fafc;
+  min-height: 70vh;
+}
+
+.titulo-seccion {
+  margin-bottom: 30px;
+}
+
+.etiqueta {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.titulo-seccion h2 {
+  color: #1e293b;
+  margin: 10px 0;
+}
+
+.titulo-seccion p {
+  color: #64748b;
+}
+
+.tabla-contenedor {
+  width: 100%;
+  overflow-x: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+th {
+  background: #eff6ff;
+  color: #1e40af;
+  padding: 15px;
+  text-align: left;
+}
+
+td {
+  padding: 15px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #475569;
+}

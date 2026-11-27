@@ -1,0 +1,72 @@
+<div class="detalle-contenedor">
+
+  <div class="detalle-tarjeta">
+
+    <div class="detalle-encabezado">
+      <span>⚡ TECNOSTORE</span>
+      <h2>Detalle del pedido</h2>
+      <p>Información de la operación registrada</p>
+    </div>
+
+    @if (pedido) {
+
+      <div class="detalle-contenido">
+
+        <div class="detalle-fila">
+          <span>Número de pedido</span>
+          <strong>#{{ pedido.id }}</strong>
+        </div>
+
+        <div class="detalle-fila">
+          <span>Producto</span>
+          <strong>{{ pedido.nombreProducto }}</strong>
+        </div>
+
+        <div class="detalle-fila">
+          <span>Cantidad</span>
+          <strong>{{ pedido.cantidad }} unidades</strong>
+        </div>
+
+        <div class="detalle-fila">
+          <span>Precio unitario</span>
+          <strong>Bs {{ pedido.precio }}</strong>
+        </div>
+
+        <div class="detalle-fila">
+          <span>Total</span>
+          <strong>Bs {{ pedido.total }}</strong>
+        </div>
+
+        <div class="detalle-fila">
+          <span>Fecha</span>
+          <strong>{{ pedido.fecha }}</strong>
+        </div>
+
+        <div class="detalle-fila">
+          <span>Estado</span>
+          <strong>{{ pedido.estado }}</strong>
+        </div>
+
+      </div>
+
+      @if (pedido.estado !== 'Cancelado') {
+        <button class="boton-cancelar" (click)="cancelarPedido()">
+          Cancelar pedido
+        </button>
+      }
+
+    } @else {
+
+      <p class="pedido-no-encontrado">
+        No se encontró el pedido solicitado.
+      </p>
+
+    }
+
+    <button class="boton-volver" (click)="volver()">
+      Volver al historial
+    </button>
+
+  </div>
+
+</div>
