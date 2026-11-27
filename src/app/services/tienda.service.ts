@@ -167,69 +167,31 @@ async obtenerPedidoPorId(id: number): Promise<any | undefined> {
   }
 
     async inicializarProductos(): Promise<void> {
-    const productos = await this.obtenerProductos();
 
-    if (productos.length === 0) {
-      const productosIniciales = [
-        {
-          id: 1,
-          nombre: 'Samsung Galaxy A55',
-          categoria: 'Celulares',
-          precio: 2500,
-          stock: 10,
-          icono: '📱',
-          descripcion: 'Celular Samsung de excelente rendimiento'
-        },
-        {
-          id: 2,
-          nombre: 'iPhone 15',
-          categoria: 'Celulares',
-          precio: 5500,
-          stock: 5,
-          icono: '📱',
-          descripcion: 'Smartphone Apple de última generación'
-        },
-        {
-          id: 3,
-          nombre: 'Laptop Lenovo IdeaPad',
-          categoria: 'Computadoras',
-          precio: 4800,
-          stock: 8,
-          icono: '💻',
-          descripcion: 'Laptop ideal para estudiar y trabajar'
-        },
-        {
-          id: 4,
-          nombre: 'Laptop HP Pavilion',
-          categoria: 'Computadoras',
-          precio: 5200,
-          stock: 4,
-          icono: '💻',
-          descripcion: 'Computadora portátil de alto rendimiento'
-        },
-        {
-          id: 5,
-          nombre: 'Teclado Logitech',
-          categoria: 'Accesorios',
-          precio: 250,
-          stock: 15,
-          icono: '⌨️',
-          descripcion: 'Teclado para computadora'
-        },
-        {
-          id: 6,
-          nombre: 'Audífonos Bluetooth',
-          categoria: 'Accesorios',
-          precio: 180,
-          stock: 20,
-          icono: '🎧',
-          descripcion: 'Audífonos inalámbricos'
-        }
-      ];
+  const productosIniciales = [
+    { id: 1, nombre: 'Samsung Galaxy A55', categoria: 'Celulares', precio: 2500, stock: 10, icono: '📱', descripcion: 'Celular Samsung de excelente rendimiento' },
+    { id: 2, nombre: 'iPhone 15', categoria: 'Celulares', precio: 5500, stock: 5, icono: '📱', descripcion: 'Smartphone Apple de última generación' },
+    { id: 3, nombre: 'Laptop Lenovo IdeaPad', categoria: 'Computadoras', precio: 4800, stock: 8, icono: '💻', descripcion: 'Laptop ideal para estudiar y trabajar' },
+    { id: 4, nombre: 'Laptop HP Pavilion', categoria: 'Computadoras', precio: 5200, stock: 4, icono: '💻', descripcion: 'Computadora portátil de alto rendimiento' },
+    { id: 5, nombre: 'Teclado Logitech', categoria: 'Accesorios', precio: 250, stock: 15, icono: '⌨️', descripcion: 'Teclado para computadora' },
+    { id: 6, nombre: 'Audífonos Bluetooth', categoria: 'Accesorios', precio: 180, stock: 20, icono: '🎧', descripcion: 'Audífonos inalámbricos' },
 
-      for (const producto of productosIniciales) {
-        await this.guardarProducto(producto);
-      }
+    { id: 7, nombre: 'Samsung Galaxy S24', categoria: 'Celulares', precio: 6800, stock: 7, icono: '📱', descripcion: 'Smartphone Samsung de alta gama' },
+    { id: 8, nombre: 'Xiaomi Redmi Note 13', categoria: 'Celulares', precio: 1800, stock: 12, icono: '📱', descripcion: 'Celular Xiaomi de buen rendimiento' },
+    { id: 9, nombre: 'Laptop ASUS VivoBook', categoria: 'Computadoras', precio: 5600, stock: 6, icono: '💻', descripcion: 'Laptop ASUS para estudio y trabajo' },
+    { id: 10, nombre: 'Monitor LG 24 pulgadas', categoria: 'Accesorios', precio: 1400, stock: 8, icono: '🖥️', descripcion: 'Monitor LG para computadora' },
+    { id: 11, nombre: 'Mouse Logitech inalámbrico', categoria: 'Accesorios', precio: 150, stock: 20, icono: '🖱️', descripcion: 'Mouse inalámbrico Logitech' },
+    { id: 12, nombre: 'Impresora Epson EcoTank', categoria: 'Accesorios', precio: 1900, stock: 5, icono: '🖨️', descripcion: 'Impresora Epson con sistema de tinta continua' }
+  ];
+
+  const productosActuales = await this.obtenerProductos();
+
+  for (const producto of productosIniciales) {
+    const existe = productosActuales.some(p => p.id === producto.id);
+
+    if (!existe) {
+      await this.guardarProducto(producto);
     }
   }
+}
 }
